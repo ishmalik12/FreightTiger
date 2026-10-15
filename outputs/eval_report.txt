@@ -1,0 +1,22 @@
+A. Note polarity (is this note a reason for a cost INCREASE?)
+  [PASS] given notes (10) 10/10
+  [PASS] adversarial paraphrases 10/10
+B. Hand-labeled verdicts
+  [PASS] real cases 11/11
+  [PASS] trap cases 13/13
+  [PASS] candidate weeks == labeled real set (extra=[], missing=[])
+C. Audit of outputs/flagged_routes.csv against raw notes
+  [PASS] justified rows cite an applicable, in-window, cost-rise note (11 rows)
+D. Independent recomputation (plain Python, no pandas) vs pipeline numbers
+  [PASS] cost/tonne-km, vs-own, vs-peers agree on every route-week (728 rows, max abs diff 0.000050 after rounding)
+E. Sensitivity: inject a one-week spike of +X% into clean 2024 weeks (seed fixed) and see if it is caught
+      + 5% spike detected in 15.0% of 200 trials
+      + 8% spike detected in 43.0% of 200 trials
+      +10% spike detected in 67.0% of 200 trials
+      +15% spike detected in 99.5% of 200 trials
+      +30% spike detected in 100.0% of 200 trials
+  [PASS] +15% spikes caught >= 95% 
+  [PASS] +30% spikes caught 100% 
+  [PASS] false alarms on 2024 Mar-Oct (no known events) 0 of 245 route-weeks (0.0%)
+
+RESULT: ALL CHECKS PASSED

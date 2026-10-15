@@ -1,0 +1,9 @@
+{
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "estimated_cost_usd": 0.0,
+  "retrieval": "local TF-IDF (scikit-learn), no API",
+  "retrieval_queries": 11,
+  "note": "Deterministic rules + templated reasons; no generative model is used in the graded path."
+}

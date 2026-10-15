@@ -1,0 +1,25 @@
+source,route,week_of,route_type,vs_own_pct,expected_flagged,expected_note,why
+real,Ahmedabad-Mumbai,2025-01-20,Medium,,No (justified),N002,festival surcharge note dated that exact week
+real,Chennai-Bangalore,2025-02-24,Medium,,No (justified),N001,flood window Feb 24 - Mar 8 covers this week
+real,Chennai-Bangalore,2025-03-03,Medium,,No (justified),N001,week Mar 3-9 overlaps flood window ending Mar 8
+real,Chennai-Bangalore,2025-03-10,Medium,,Yes,,N001 window ended Mar 8 and roads passable from Mar 9; elevated cost has no note
+real,Chennai-Bangalore,2025-03-17,Medium,,Yes,,N009 says route back to normal; no cost-rise note
+real,Delhi-Jaipur,2024-11-11,Short,,Yes,,only Delhi-Jaipur note (N007) is May 2024 and says roads IMPROVED
+real,Delhi-Jaipur,2024-11-18,Short,,Yes,,same as above
+real,Mumbai-Delhi,2025-05-12,Long,,No (justified),N003,nationwide diesel rise from week of May 5
+real,Mumbai-Pune,2025-09-15,Short,,Yes,,diesel note is 4+ months earlier; N006 says stable
+real,Mumbai-Pune,2025-11-17,Short,,Yes,,N010 says no rate change
+real,Delhi-Chennai,2024-02-05,Long,,Yes,,no note anywhere near (rule flags a +8.5% week)
+trap,Delhi-Jaipur,2024-05-20,Short,15,Yes,,N007 says road conditions improved - must not be cited
+trap,Mumbai-Delhi,2024-07-29,Long,15,Yes,,N005 says costs were not significantly affected - must not be cited
+trap,Kolkata-Bhubaneswar,2025-06-09,Medium,15,Yes,,N008 says no disruptions - must not be cited
+trap,Ahmedabad-Mumbai,2025-03-03,Medium,20,Yes,,N001 is a different route
+trap,Chennai-Bangalore,2025-01-20,Medium,20,Yes,,N002 is a different route
+trap,Mumbai-Pune,2025-08-04,Short,9,Yes,,diesel effect window (8 weeks) is over
+trap,Mumbai-Pune,2025-05-12,Short,30,Yes,,diesel note says 5-7%; +30% is far beyond it
+trap,Mumbai-Pune,2025-05-12,Short,6,No (justified),N003,+6% is inside the stated 5-7% range
+trap,Delhi-Chennai,2025-06-23,Long,9,No (justified),N003,last week of the diesel window
+trap,Delhi-Chennai,2025-06-30,Long,9,Yes,,first week after the diesel window
+trap,Ahmedabad-Mumbai,2025-01-27,Medium,20,Yes,,week AFTER the festival week
+trap,Ahmedabad-Mumbai,2025-01-13,Medium,20,Yes,,week BEFORE the festival week
+trap,Delhi-Chennai,2024-03-11,Long,12,Yes,,N004 toll plaza says routes not in dataset
